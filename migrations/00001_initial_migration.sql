@@ -1,6 +1,6 @@
 -- +goose Up
-create schema appledb.dbo;
-alter schema appledb.dbo owner to appleadmin;
+create schema if not exists dbo;
+alter schema dbo owner to appleadmin;
 
 -- +goose Down
-drop schema appledb.dbo;
+drop schema if exists dbo;
