@@ -2,7 +2,9 @@
 create table if not exists dbo.home_slider
 (
     id         uuid primary key        not null,
+    name       varchar(200)            not null,
     file_id    uuid                    not null,
+    priority   smallint                not null,
     created_at timestamp default now() not null,
     is_deleted bool      default false not null,
     CONSTRAINT fk_file_id foreign key (file_id) references dbo.files (id)
