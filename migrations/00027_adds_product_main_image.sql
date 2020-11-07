@@ -1,6 +1,6 @@
 -- +goose Up
 alter table dbo.products
-    add column main_image uuid;
+    add column if not exists main_image uuid;
 
 UPDATE dbo.products
 SET main_image=subquery.file_id
